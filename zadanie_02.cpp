@@ -47,9 +47,8 @@ T accumulate_parallel(InputIterator first, InputIterator last, T init)
     vec_thread.reserve(hardware_threads);
 
     // put results in vector element passed by reference (threads cannot return a value)
-    std::vector<int> vec_result(4,0);
+    std::vector<int> vec_result(hardware_threads,0);
 
-//    vec_result.reserve(hardware_threads);
 
     // threads
     for(int i = 0; i < hardware_threads; i++)
